@@ -1,0 +1,27 @@
+# Ignore the temporary build artifacts directory
+build/
+
+# Ignore system configuration files
+.DS_Store
+Thumbs.db
+
+# Ignore LaTeX build artifacts (if building manually without a build system)
+*.acn
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glo
+*.glsdefs
+*.ist
+*.loa
+*.lof
+*.log
+*.lol
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc

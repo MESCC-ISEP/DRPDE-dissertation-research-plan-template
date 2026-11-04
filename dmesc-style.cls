@@ -169,19 +169,9 @@
 
 \RequirePackage{lmodern} % AMB: Latin Modern Roman for the text body (if needed serif font).
 
-%\RequirePackage[defaultsans,scale=0.90]{opensans} % AMB: Sans serif font similar to Calibri and Aptos, as required by the ISEP template guidelines.
-%\RequirePackage[defaultsans]{lato}
-\RequirePackage[default]{sourcesans}
-%\RequirePackage[default]{roboto}
+\RequirePackage[default]{sourcesans} % AMB: Complete sans serif font, similar to MS Aptos.
 
-%\RequirePackage{inconsolata} % AMB Inconsolata mono space font for listings.
-%\RequirePackage{inconsolata-nerd-font}
-%\RequirePackage{inconsolata-lgc} % AMB: Inconsolata mono space font for listings, with support for accented characters. Não vem por pré-definição com o pacote inconsolata, mas é necessário para suportar caracteres acentuados em listings.
-%\usepackage[scaled=0.88]{gomono}
-\usepackage[scaled=0.85]{sourcecodepro}
-%\RequirePackage[scaled]{beramono}
-%\RequirePackage[scaled]{DejaVuSansMono}
-%\RequirePackage{FiraMono}
+\RequirePackage[scaled=0.85]{sourcecodepro} % AMB complete mono-space font for listings.
 
 \renewcommand{\familydefault}{\sfdefault} % AMB: The text body uses a sans serif typeface, as specified by the ISEP template guidelines.
 

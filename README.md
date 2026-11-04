@@ -14,9 +14,9 @@ Make sure you have the following tools installed: **pdflatex**, **makeglossaries
 
 | Package | Obs |
 |---------|-----|
-|etoolbox| |
-|xparse| |
-|parskip| |
+|etoolbox|Required for advanced programming tools and macro maintenance|
+|xparse|Required for command and environment definition|
+|parskip|Required for paragraph spacing and indentation control|
 |babel|Required for automatically changing names of document elements to languages besides english|
 |scrbase|Required for handling language-dependent names of sections/document elements|
 |scrhack|Loads fixes for various packages|
@@ -37,10 +37,10 @@ Make sure you have the following tools installed: **pdflatex**, **makeglossaries
 |listings|Required for code listings|
 |glossaries|Required to define acronyms and make glossaries|
 |caption|Required for customising the captions|
-|geometry| |
-|scrlayer-scrpage| |
+|geometry|Required for page dimensions and margin customization|
+|scrlayer-scrpage|Required for customizing page headers and footers|
 |biblatex|Required for citations and bibliography|
-|hyperref| |
+|hyperref|Required for hyperlinks, cross-references, and PDF metadata|
 |tikz|Required for creating graphics programmatically (can be removed if not used)|
 |pgfplots|Required for drawing high--quality function plots (can be removed if not used)|
 

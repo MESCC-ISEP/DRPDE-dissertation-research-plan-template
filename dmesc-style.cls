@@ -171,7 +171,7 @@
 
 \RequirePackage[default]{sourcesans} % AMB: Complete sans serif font, similar to MS Aptos.
 
-\RequirePackage[scaled=0.85]{sourcecodepro} % AMB complete mono-space font for listings.
+\RequirePackage[scaled=0.85]{sourcecodepro} % AMB: Complete mono-space font for listings.
 
 \renewcommand{\familydefault}{\sfdefault} % AMB: The text body uses a sans serif typeface, as specified by the ISEP template guidelines.
 
@@ -195,7 +195,7 @@
   escapeinside={\%*}{*)},            % if you want to add LaTeX within your code
   extendedchars=true,                % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
   frame=single,	                     % adds a frame around the code
-  xleftmargin=1cm,					 % AMB: According to ISEP dissertation guidelines
+  xleftmargin=1cm,                   % AMB: According to ISEP dissertation guidelines
   keepspaces=true,                   % keeps spaces in text, useful for keeping indentation of code 
   keywordstyle=\color{blue},         % keyword style
   language=C,                        % the default language of the code
@@ -231,7 +231,6 @@
 \RequirePackage[acronym,nonumberlist]{glossaries} % Required to define acronyms and make glossaries
 
 \RequirePackage[centerlast,small,sc]{caption} % Required for customising the captions
-%\RequirePackage[centerlast,small]{caption} % Required for customising the captions
 \setlength{\captionmargin}{50pt}
 
 %----------------------------------------------------------------------------------------
@@ -289,9 +288,8 @@
 \providepairofpagestyles{thesisSimple}{%
 \clearpairofpagestyles%
 \automark[chapter]{chapter}
-\ihead{\headmark}% Inner header
-%\ohead[\pagemark]{\pagemark}% Outer header
-\ohead{\pagemark}% Outer header
+\ihead[]{\headmark}% Inner header
+\ohead[]{\pagemark}% Outer header
 \cfoot[\pagemark]{}% Número da página centrado no rodapé APENAS na 1ª página de capítulo (estilo plain)
 }
 \ifoot{}% Inner footer
@@ -341,8 +339,8 @@ KOMA-script documentation for details.}]{fancyhdr}
 %	TITLEPAGE PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-\newcommand{\dissertationdisclamer}{Dissertation submitted in partial fulfilment of the requirements for the\\ Master’s Degree in Critical Computing Systems Engineering}
-\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\dissertationdisclamer}{Dissertation submitted in partial fulfilment of the requirements for the \\ Master’s Degree in Critical Computing Systems Engineering}
+\newcommand{\dissertationdisclamer}{Dissertation submitted in partial fulfilment of the requirements for the\\ Master's Degree in Critical Computing Systems Engineering}
+\providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\dissertationdisclamer}{Dissertation submitted in partial fulfilment of the requirements for the \\ Master's Degree in Critical Computing Systems Engineering}
 \providecaptionname{portuguese}{\dissertationdisclamer}{Disserta\c{c}\~ao submetida para satisfa\c{c}\~ao parcial dos requisitos do Grau de \\ Mestre em Engenharia de Sistemas Computacionais Críticos} % Portuguese 
 
 \newcommand{\supervisorlabel}{Supervisor}
@@ -355,7 +353,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 
 \newcommand{\externalsupervisorlabel}{External Supervisor}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\externalsupervisorlabel}{External Supervisor}
-\providecaptionname{portuguese}{\externalsupervisorlabel}{Supervisor} % AMB: Supervisor na empresa.
+\providecaptionname{portuguese}{\externalsupervisorlabel}{Supervisor}
 
 \newcommand{\evallabel}{Evaluation Committee}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\evallabel}{Evaluation Committee}
@@ -374,7 +372,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\newgeometry{top=3.5cm, bottom=3.0cm, left=3.0cm, right=3.0cm}
 	\begin{titlepage}
 	\begin{center}
-    {\noindent \includegraphics[width=3in]{/frontmatter/assets/isep_wordmark_expanded_vintage.pdf}}
+	{\noindent \includegraphics[width=3in]{/frontmatter/assets/isep_wordmark_expanded_vintage.pdf}}
 	\null
 
 	\vspace*{0.5cm}
@@ -606,11 +604,8 @@ KOMA-script documentation for details.}]{fancyhdr}
 % Define some commands to keep the formatting separated from the content 
 \newcommand{\keyword}[1]{\textbf{#1}}
 \newcommand{\tabhead}[1]{\textbf{#1}}
-%\newcommand{\code}[1]{\texttt{#1}}
 \newcommand{\code}[1]{\texttt{\detokenize{#1}}}
-%\newcommand{\file}[1]{\texttt{\bfseries#1}}
 \newcommand{\file}[1]{\texttt{#1}}
-%\newcommand{\option}[1]{\texttt{\itshape#1}}
 \newcommand{\option}[1]{\texttt{\detokenize{#1}}}
 
 %----------------------------------------------------------------------------------------

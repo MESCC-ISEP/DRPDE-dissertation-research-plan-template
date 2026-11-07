@@ -3,29 +3,21 @@
 % LaTeX Template
 % Version 1.0 (November 2026), adapted from MESCC Dissertation template
 %
-% Dissertation template was adapted to MESCC/ISEP by
-% Luis Miguel Pinho (lmp@isep.ipp.pt) and
-% António Barros (amb@isep.ipp.pt)
+% [Dissertation Planned Title here]
 %
-% Based on TMDEI/ISEP style (Dec/2015) by
-% Nuno Pereira (nap@isep.ipp.pt) and
-% Paulo Baltarejo (pbs@isep.ipp.pt)
+% Author: Student Name
+% Supervisor: Supervisor Name
+% Co-supervisor: Co-supervisor Name (if applicable)
+% Course: Master's in Critical Computing Systems Engineering
+% ISEP - School of Engineering, Polytechnic of Porto
+% Creation Date: [Insert creation date here]
 %
-% Based on MastersDoctoralThesis Version 1.2 by Vel (vel@latextemplates.com) and
-% Johannes Böttcher, downloaded from (21/11/15):
-% http://www.LaTeXTemplates.com
-%
-% This template is originally based on a template by:
-% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
-% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
-%
-% Template license:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
+% This document uses the DMESC-style.sty template
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 %----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%	DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[
@@ -45,33 +37,51 @@
 	headsepline, % Uncomment to get a line under the header
 ]{dmesc-style} % The class file specifying the document structure
 
-\usepackage{tikz} % Required for creating graphics programmatically (can be removed if not used)
+
+%----------------------------------------------------------------------------------------
+%	ADDITIONAL PACKAGES AND CUSTOM PACKAGE CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+% In this section you can add any additional packages you need to use in your 
+% dissertation.
+%   - Do not modify the style of the document, as it is already configured in
+%     the dmesc-style.cls file.
+%   - Do not add any packages that are already included in the dmesc-style.cls file,
+%     as this may cause conflicts.
+
+% You can also configure the packages here, but do not modify the style of
+% the document.
+
+% Define TIKZ libraries to be used in the document (uncomment if needed)
 %\usetikzlibrary{arrows} % Required for fancy arrows in TiKZ graphics (can be removed if not used)
 
-\usepackage{pgfplots} % Required for drawing high--quality function plots (can be removed if not used)
 
-\pgfplotsset{compat=newest}
+%----------------------------------------------------------------------------------------
+%	CITATION STYLE CONFIGURATION
+%----------------------------------------------------------------------------------------
 
-\usepackage{tabularx}
+% Next you have examples of admissable citation styles; we recomend using the
+% authoryear-comp citation style (which resembles Harvard).
+% Don't forget to only uncomment one.
 
-%
-% Next you have examples of admissable citation styles; we recomend using the authoryear-comp citation style (which resembles Harvard); don't forget to only uncomment one
-%
+% AMB: According to ISEP dissertation guidelines you should use the authoryear-comp
+% citation style (e.g. (Buendía, 1860), (Buendía 1910, Arcadio 1940)). Do not use the
+% numeric citation style (e.g. [1], [1-3]) or the alphabetic citation style
+% (e.g. [Buendía10], [Buendía10, Arcadio40]).
 
 % authoryear-comp: recommended citation style (e.g. (Buendía, 1860), (Buendía 1910, Arcadio 1940))
-% AMB: USE THIS STYLE, according to ISEP dissertation guidelines.
 \usepackage[style=authoryear-comp,backend=biber]{biblatex} % Bibtex backend with the authoryear-comp citation style (authoryear citations, bibliography ordered alphabetically)
 
 % numeric citation style (e.g. [1], [1-3])
-% AMB: DO NOT USE THIS STYLE, according to ISEP dissertation guidelines.
 %\usepackage[style=numeric-comp,sorting=none,backend=biber]{biblatex} % Bibtex backend with the numeric-comp citation style (numeric citations, bibliography ordered by appearance)
 
 % alphabetic citation style (e.g. [Buendía10], [Buendía10, Arcadio40])
-% AMB: DO NOT USE THIS STYLE, according to ISEP dissertation guidelines.
 %\usepackage[style=alphabetic,sorting=none,backend=biber]{biblatex} % Bibtex backend with the alphabetic citation style (alphabetic citations, bibliography ordered by appearance)
 
-%\usepackage{etoolbox}
 
+%----------------------------------------------------------------------------------------
+%	SIMPLE PATCH TO ADAPT THE TITLE PAGE TO THE DISSERTATION RESEARCH PLAN
+%----------------------------------------------------------------------------------------
 \patchcmd{\maketitlepage}{\evallabel:}{}{}{}
 \patchcmd{\maketitlepage}{\presidentlabel:}{}{}{}
 \patchcmd{\maketitlepage}{\presidentname}{}{}{}
@@ -88,6 +98,9 @@
 }
 
 
+%----------------------------------------------------------------------------------------
+%	GLOSSARY CONFIGURATION
+%----------------------------------------------------------------------------------------
 \addbibresource{mainbibliography.bib} % The filename of the bibliography
 
 \makeglossaries % build the glossary
@@ -97,19 +110,26 @@
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
 
-\thesistitle{Dissertation Planned Title} % Your thesis title, this is used in the title, print it elsewhere with \ttitle
+% Your thesis title, this is used in the title, print it elsewhere with \ttitle
+\thesistitle{Dissertation Planned Title} 
 
-\thesissubtitle{Subtitle (if exists)} % Your thesis subtitle, this is used in the title, print it elsewhere with \tsubtitle, comment line if not existing
+% Your thesis subtitle, this is used in the title, print it elsewhere with \tsubtitle, comment line if not existing
+\thesissubtitle{Subtitle (if exists)}
 
-\author{Candidate Full Name} % Your name, this is used in the title page, print it elsewhere with \authorname
+% Your name, this is used in the title page, print it elsewhere with \authorname
+\author{Candidate Full Name} 
 
-\supervisor{Full Name} % Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+% Your supervisor's name, this is used in the title page, print it elsewhere with \supname
+\supervisor{Full Name} 
 
-\cosupervisor{Full Name (if exists)} % Your co-supervisor's name, this is used in the title page, print it elsewhere with \cosupname (comment, if no co-supervisor)
+% Your co-supervisor's name, this is used in the title page, print it elsewhere with \cosupname (comment, if no co-supervisor)
+\cosupervisor{Full Name (if exists)} 
 
-\keywords{Keyword1, ..., Keyword6} % Please define up to 6 keywords that better describe your work, print it elsewhere with \keywordnames
+% Please define up to 6 keywords that better describe your work, print it elsewhere with \keywordnames
+\keywords{Keyword1, ..., Keyword6} 
 
-\thesisdate{Porto, \today} % thesis date,  print it elsewhere with \tdate
+% Thesis date, print it elsewhere with \tdate
+\thesisdate{Porto, \today} 
 
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
@@ -151,6 +171,7 @@
 
 \printbibliography[heading=bibintoc]
 
+
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
 %----------------------------------------------------------------------------------------
@@ -164,6 +185,9 @@
 %\input{appendices/appendixB}
 %\input{appendices/appendixC}
 
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT END
 %----------------------------------------------------------------------------------------
 
 \end{document}

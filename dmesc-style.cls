@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % DMECS Thesis Class File
-% Version 0.5 (Nov/2026)
+% Version 1.0 (Nov/2026)
 %
 % Based on MastersDoctoralThesis Version 1.2 by Vel (vel@latextemplates.com) and
 % Johannes Böttcher, downloaded from (21/11/15):
@@ -19,7 +19,7 @@
 %  Luis Miguel Pinho (lmp@isep.ipp.pt)
 %
 % Last update (Nov/2026)
-%  Luis Miguel Pinho (lmp@isep.ipp.pt)
+%  Luis Miguel Pinho (lmp@isep.ipp.pt) and
 %  António Barros (amb@isep.ipp.pt)
 % 
 % Notes:
@@ -31,6 +31,7 @@
 % LPPL v1.3c (http://www.latex-project.org/lppl)
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %----------------------------------------------------------------------------------------
 %	CLASS DEFINITION AND PARAMETERS
@@ -164,6 +165,13 @@
 \RequirePackage{graphicx} % Required to include images
 \graphicspath{{.}}
 
+% --- INIRA OS NOVOS PACOTES AQUI ---
+\RequirePackage{tikz}          % Para gráficos programáticos
+\RequirePackage{pgfplots}      % Para gráficos de alta qualidade
+\pgfplotsset{compat=newest}    % Compatibilidade recomendada para o pgfplots
+\RequirePackage{tabularx}      % Para tabelas avançadas com colunas de largura ajustável
+% ------------------------------------
+
 \RequirePackage[dvipsnames]{xcolor} % Required for extra color names
 
 \RequirePackage{booktabs} % Required for better table rules
@@ -216,7 +224,7 @@
 	showtabs=false,                    % show tabs within strings adding particular underscores
 	stepnumber=1,                      % the step between two line-numbers. If it's 1, each line will be numbered
 	stringstyle=\color{MidnightBlue},  % string literal style
-	tabsize=2,	                     % sets default tabsize to 2 spaces
+	tabsize=2,	                       % sets default tabsize to 2 spaces
 	title=\lstname,                    % show the filename of files included with \lstinputlisting; also try caption instead of title
 	inputencoding = utf8,              % Input encoding
 	literate=                          % Support additional characters
@@ -269,11 +277,13 @@
 	\addcontentsline{toc}{chapter}{#1}%
 }
 
+
 %----------------------------------------------------------------------------------------
 %	MARGINS
 %----------------------------------------------------------------------------------------
 
 \RequirePackage{geometry}
+
 \geometry{
 	head=16.43pt,
 	paper=a4paper, % Change to letterpaper for US letter
@@ -286,6 +296,7 @@
 
 \raggedbottom
 
+
 %----------------------------------------------------------------------------------------
 %	PENALTIES
 %----------------------------------------------------------------------------------------
@@ -296,11 +307,13 @@
 \clubpenalty=9999 % Almost no orphans at top of page
 \interfootnotelinepenalty=9999 % Almost never break footnotes
 
+
 %----------------------------------------------------------------------------------------
 %	HEADERS AND FOOTERS
 %----------------------------------------------------------------------------------------
 
 \RequirePackage[markcase=used]{scrlayer-scrpage}
+
 \providepairofpagestyles{thesisSimple}{%
 	\clearpairofpagestyles%
 	\automark[chapter]{chapter}
@@ -308,12 +321,15 @@
 	\ohead[]{\pagemark}% Outer header
 	\cfoot[\pagemark]{}% Número da página centrado no rodapé APENAS na 1ª página de capítulo (estilo plain)
 }
+
 \ifoot{}% Inner footer
 \ofoot{}% Outer footer
+
 \pagestyle{thesisSimple}
 \providepairofpagestyles[thesisSimple]{thesis}{%
 	\automark*[section]{}%
 }
+
 \pagestyle{thesis}
 \ifbool{headsepline}{\KOMAoption{headsepline}{true}}{}
 \PreventPackageFromLoading[\ClassError{\classname}{Package `fancyhdr' is
@@ -331,6 +347,7 @@
 			\thispagestyle{\blank@p@gestyle}
 			\newpage
 			\if@twocolumn\hbox{}\newpage\fi\fi\fi}
+
 
 %----------------------------------------------------------------------------------------
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS
@@ -351,16 +368,14 @@
 \newcommand*{\department}[1]{\def\deptname{#1}}
 \newcommand*{\keywords}[1]{\def\keywordnames{#1}}
 
+
 %----------------------------------------------------------------------------------------
 %	TITLEPAGE PAGE DESIGN
 %----------------------------------------------------------------------------------------
 
-%\newcommand{\dissertationdisclamer}{}
 \newcommand{\dissertationdisclamer}{Dissertation submitted in partial fulfilment of the requirements for the\\ Master's Degree in Critical Computing Systems Engineering}
-
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\dissertationdisclamer}{Dissertation submitted in partial fulfilment of the requirements for the \\ Master's Degree in Critical Computing Systems Engineering}
-
-\providecaptionname{portuguese}{\dissertationdisclamer}{Disserta\c{c}\~ao submetida para satisfa\c{c}\~ao parcial dos requisitos do Grau de \\ Mestre em Engenharia de Sistemas Computacionais Críticos} % Portuguese 
+\providecaptionname{portuguese}{\dissertationdisclamer}{Disserta\c{c}\~ao submetida para satisfa\c{c}\~ao parcial dos requisitos do Grau de \\ Mestre em Engenharia de Sistemas Computacionais Críticos}
 
 \newcommand{\supervisorlabel}{Supervisor}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\supervisorlabel}{Supervisor}
@@ -385,6 +400,7 @@
 \newcommand{\memberslabel}{Members}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\memberslabel}{Members}
 \providecaptionname{portuguese}{\memberslabel}{Vogais}
+
 
 \newcommand{\maketitlepage}{
 	\checktoopen
@@ -437,6 +453,7 @@
 	\restoregeometry
 }
 
+
 %----------------------------------------------------------------------------------------
 %	STATEMENT OF INTEGRITY
 %----------------------------------------------------------------------------------------
@@ -448,6 +465,7 @@
 \newcommand{\statementtext}{I hereby declare having conducted this academic work with integrity. I have not plagiarised or applied any form of undue use of information or falsification of results along the process leading to its elaboration. \\\\I declare that the work presented in this document is original and my own, and has not previously been used for any other purpose. \\\\I further declare that I have fully followed the Code of Good Practices and Conduct of the Polytechnic Institute of Porto.\\\\ \\\\ISEP, \tdate\\\\ \\\\}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\statementtext}{I hereby declare having conducted this academic work with integrity. I have not plagiarised or applied any form of undue use of information or falsification of results along the process leading to its elaboration. \\\\I declare that the work presented in this document is original and my own, and has not previously been used for any other purpose. \\\\I further declare that I have fully followed the Code of Good Practices and Conduct of the Polytechnic Institute of Porto.\\\\ \\\\ISEP, \tdate\\\\ \\\\}
 \providecaptionname{portuguese}{\statementtext}{Declaro ter conduzido este trabalho acad\'{e}mico com integridade. N\~{a}o plagiei ou apliquei qualquer forma de uso indevido de informa\c{c}\~{o}es ou falsifica\c{c}\~{a}o de resultados ao longo do processo que levou \`{a} sua elabora\c{c}\~{a}o\\\\Declaro que o trabalho apresentado neste documento \'{e} original e de minha autoria, n\~{a}o tendo sido utilizado anteriormente para outro fim.\\\\Declaro ainda que tenho pleno conhecimento do C\'{o}digo de Conduta \'{E}tica do P.PORTO.\\\\ \\\\ISEP, \tdate\\\\ \\\\} % Portuguese
+
 
 \newenvironment{integritystatement}{
 	\checktoopen
@@ -469,6 +487,7 @@
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\dedicationlabel}{Dedicatory}
 \providecaptionname{portuguese}{\dedicationlabel}{Dedicat\'oria} % Portuguese 
 
+
 \newenvironment{dedicatory}{
 	\checktoopen
 	\tttypeout{\dedicationlabel}
@@ -478,6 +497,7 @@
 {
 	\vfil\vfil\vfil\null
 }
+
 
 %----------------------------------------------------------------------------------------
 %	ABSTRACT PAGE DESIGN
@@ -504,6 +524,7 @@
 	\vfil\vfil\vfil\null
 }
 
+
 \newcommand{\abslabelotherlang}{Resumo}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish}{\abslabelotherlang}{Resumo}
 \providecaptionname{portuguese}{\abslabelotherlang}{Abstract}
@@ -519,6 +540,7 @@
 	\vfil\vfil\vfil\null
 }
 
+
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS PAGE DESIGN
 %----------------------------------------------------------------------------------------
@@ -526,6 +548,7 @@
 \newcommand{\abbrevname}{List of Abbreviations}
 \providecaptionname{english,british,american}{\abbrevname}{List of Abbreviations}
 \providecaptionname{portuguese}{\abbrevname}{Lista de Abrevia\c{c}\~oes}
+
 \NewDocumentEnvironment{abbreviations}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
 	\ifbool{listtoc}{\addchap{\abbrevname}}{\addchap*{\abbrevname}}
@@ -535,6 +558,7 @@
 	\addtocounter{table}{-1} % Don't count this table as one of the document tables
 	\ifbool{nolistspace}{\endgroup}{}
 }
+
 
 %----------------------------------------------------------------------------------------
 %	PHYSICAL CONSTANTS PAGE DESIGN
@@ -554,6 +578,7 @@
 	\ifbool{nolistspace}{\endgroup}{}
 }
 
+
 %----------------------------------------------------------------------------------------
 %	SYMBOLS PAGE DESIGN
 %----------------------------------------------------------------------------------------
@@ -561,6 +586,7 @@
 \newcommand{\symbolsname}{Symbols}
 \providecaptionname{english,british,american}{\symbolsname}{List of Symbols}
 \providecaptionname{portuguese}{\symbolsname}{Lista de S\'imbolos}
+
 \NewDocumentEnvironment{symbols}{ m }{%
 	\ifbool{nolistspace}{\begingroup\singlespacing}{}
 	\ifbool{listtoc}{\addchap{\symbolsname}}{\addchap*{\symbolsname}}
@@ -571,6 +597,7 @@
 	\ifbool{nolistspace}{\endgroup}{}
 }
 
+
 %----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENT PAGE DESIGN
 %----------------------------------------------------------------------------------------
@@ -578,6 +605,7 @@
 \newcommand{\acknowledgementlabel}{Acknowledgements}
 \providecaptionname{american,australian,british,canadian,english,newzealand,UKenglish,USenglish} {\acknowledgementlabel}{Acknowledgements} % Acknowledgement text for English countries
 \providecaptionname{portuguese} {\acknowledgementlabel}{Agradecimentos}
+
 \newenvironment{acknowledgements}{
 	%\addchaptertocentry{\acknowledgementlabel} % Add the acknowledgements to the table of contents
 	\tttypeout{\acknowledgementlabel}
@@ -589,6 +617,9 @@
 	\vfil\vfil\vfil\null
 }
 
+
+%----------------------------------------------------------------------------------------
+%	HYPERREF SETUP
 %----------------------------------------------------------------------------------------
 
 \ifbool{hyperreflinkcolor}{\newcommand{\hreflinkcolor}{true}}{\newcommand{\hreflinkcolor}{false}}
@@ -618,6 +649,8 @@
 }{%nothing
 }
 
+%----------------------------------------------------------------------------------------
+%	CUSTOM COMMANDS
 %----------------------------------------------------------------------------------------
 
 % Define some commands to keep the formatting separated from the content 

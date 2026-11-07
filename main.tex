@@ -70,7 +70,7 @@
 % AMB: DO NOT USE THIS STYLE, according to ISEP dissertation guidelines.
 %\usepackage[style=alphabetic,sorting=none,backend=biber]{biblatex} % Bibtex backend with the alphabetic citation style (alphabetic citations, bibliography ordered by appearance)
 
-\usepackage{etoolbox}
+%\usepackage{etoolbox}
 
 \patchcmd{\maketitlepage}{\evallabel:}{}{}{}
 \patchcmd{\maketitlepage}{\presidentlabel:}{}{}{}
@@ -79,17 +79,14 @@
 \patchcmd{\maketitlepage}{\committee}{}{}{}
 \patchcmd{\maketitlepage}{\externalsupervisor}{}{}{}
 
+% Automatic Disclaimer configuration per language
+\iflanguage{portuguese}{
+    \renewcaptionname{portuguese}{\dissertationdisclamer}{Plano de Investigação da Dissertação \\ Mestrado em Engenharia de Sistemas Computacionais Críticos}
 
-\renewcaptionname{english}
-  {\dissertationdisclamer}
-  {Dissertation Research Plan \\
-   Master's degree in Critical Computing Systems Engineering
+}{
+		\renewcaptionname{english}{\dissertationdisclamer}{Dissertation Research Plan \\ Master's degree in Critical Computing Systems Engineering}
 }
 
-\newcaptionname{portuguese}
-  {\dissertationdisclamer}
-  {Plano de Investigação da Dissertação\\
-  Mestrado em Engenharia de Sistemas Computacionais Críticos}
 
 \addbibresource{mainbibliography.bib} % The filename of the bibliography
 
@@ -132,6 +129,7 @@
 
 % Include the frontmatter of your thesis here
 \input{frontmatter/frontmatter}
+
 
 %----------------------------------------------------------------------------------------
 %	MAIN BODY

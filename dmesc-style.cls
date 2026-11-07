@@ -165,12 +165,12 @@
 \RequirePackage{graphicx} % Required to include images
 \graphicspath{{.}}
 
-% --- INIRA OS NOVOS PACOTES AQUI ---
-\RequirePackage{tikz}          % Para gráficos programáticos
-\RequirePackage{pgfplots}      % Para gráficos de alta qualidade
-\pgfplotsset{compat=newest}    % Compatibilidade recomendada para o pgfplots
-\RequirePackage{tabularx}      % Para tabelas avançadas com colunas de largura ajustável
-% ------------------------------------
+\RequirePackage{tikz} % Required for creating graphics programmatically
+
+\RequirePackage{pgfplots} % Required for drawing high-quality function plots
+\pgfplotsset{compat=newest} % Set the compatibility level of pgfplots to the newest version
+
+\RequirePackage{tabularx} % Required for tables with adjustable-width columns
 
 \RequirePackage[dvipsnames]{xcolor} % Required for extra color names
 
